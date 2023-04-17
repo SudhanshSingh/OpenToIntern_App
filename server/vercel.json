@@ -12,7 +12,19 @@
     ],
     "routes":[
         {
-            "src": "/functionup/(.*)",
+            "src": "/functionup/colleges",
+            "dest": "src/index.js"
+        },
+        {
+            "src": "/functionup/interns",
+            "dest": "src/index.js"
+        },
+        {
+            "src": "/functionup/collegeDetails",
+            "dest": "src/index.js"
+        },
+        {
+            "src": "/functionup/allCollegeDetails",
             "dest": "src/index.js"
         },
         {
