@@ -105,7 +105,7 @@ const createCollege = async function (req, res) {
 const getcollege = async function (req, res) {
   try {
     const collegeName = req.query.collegeName;
-    console.log((collegeName))
+    // console.log((collegeName))
 
      if (!collegeName) { return res.status(400).send({ message: "plzz provide collegeName" }) }
 
@@ -122,20 +122,21 @@ const getcollege = async function (req, res) {
     }
 
     const details = await internModel.find().populate("collegeId");
-    console.log("PRINT", details)
+    // console.log("PRINT", details)
 
     let allinterns = [];
     const allinterns1 = details.map((x) => {
-      if (x.collegeId.name == collegeName.toLowerCase()) {
+      if (x.collegeId.name === collegeName.toLowerCase()) {
+        //console.log(true)
         allinterns.push(x);
       }
       return allinterns;
     });
    
     if (!allinterns1[0][0]) {
-      return res.status(404).send({ status: true, message: "no data found" });
+      return res.status(404).send({ status: true, message: "No Interns Available" });
     }
-    console.log("kuchbhi", allinterns);
+    // console.log("kuchbhi", allinterns);
 
     interns = [];
     for (i = 0; i < allinterns.length; i++) {
@@ -157,9 +158,9 @@ const getcollege = async function (req, res) {
         logoLink: allinterns[0].collegeId.logoLink,
         interns: interns,
       };
-     // console.log(dataToFetch);
+      // console.log("dataToFetch",dataToFetch);
 
-      return res.status(200).send({ status: true, message: dataToFetch });
+      return res.status(200).send({ status: true,message:"interns data" ,data: dataToFetch });
     
   } catch (err) {
     return res.status(500).send({ status: false, message: err.message });

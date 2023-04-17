@@ -131,7 +131,7 @@ const createInterns = async function (req, res) {
 
 
          data.collegeId = checkCollegeName._id;
-        console.log(data.collegeId,'collegeId')
+        // console.log(data.collegeId,'collegeId')
     let created = await internModel.create(data);
    return res.status(201).send({ status: true,message:'Your request has been successfully submitted', data: created });
   } catch (err) {
