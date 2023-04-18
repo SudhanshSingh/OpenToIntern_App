@@ -12,20 +12,12 @@
     ],
     "routes":[
         {
-            "src": "/functionup/colleges",
+            "src": "/functionup/(.*)",
             "dest": "src/index.js"
         },
         {
-            "src": "/functionup/interns",
-            "dest": "src/index.js"
-        },
-        {
-            "src": "/functionup/collegeDetails",
-            "dest": "src/index.js"
-        },
-        {
-            "src": "/functionup/allCollegeDetails",
-            "dest": "src/index.js"
+            "src": "/",
+            "dest": "build/index.html"
         },
         {
             "src": "/createintern",
