@@ -14,9 +14,9 @@ router.get("/functionup/collegeDetails", collegeController.getcollege);
 
 router.get("/functionup/allCollegeDetails",collegeController.getAllCollege)
 
-router.all("*",function(req,res){
-    res.sendFile(path.resolve("build","index.html"))
- });
+// router.all("*",function(req,res){
+//     res.sendFile(path.resolve("build","index.html"))
+//  });
 //   console.log(path.resolve("build","index.html"))
 // router.all("/*",function(req,res){
 //     res.status(400).send({
