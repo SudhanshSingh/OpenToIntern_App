@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //cluster string
 
 app.use(cors())
+// console.log(path.resolve(process.env.PUBLIC_DIR))
 app.use(express.static(path.resolve(process.env.PUBLIC_DIR)))
 app.use("/", route)
 
@@ -21,6 +22,7 @@ mongoose.connect(process.env.MONGO_STRING, {
 })
 .then( ()=> console.log("MongoDb is connected"))
 .catch ( err => console.log(err) )
+
 
 app.listen(process.env.PORT || 5000, (err)=> {
     console.log("Connected to PORT 5000")
