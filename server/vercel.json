@@ -28,7 +28,19 @@
             "dest": "src/index.js"
         },
         {
-            "src": "/",
+            "src": "/createintern",
+            "dest": "build/index.html"
+        },
+        {
+            "src": "/createcollege",
+            "dest": "build/index.html"
+        },
+        {
+            "src": "/filter",
+            "dest": "build/index.html"
+        },
+        {
+            "src": "/contact",
             "dest": "build/index.html"
         },
         {
